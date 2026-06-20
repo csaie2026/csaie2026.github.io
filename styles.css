@@ -1,0 +1,619 @@
+/* ========================================================================
+   Reconstructed UIkit, Responsive Layout & Hamburger Menu CSS
+   ======================================================================== */
+
+/* --- Core Resets & Base --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+  background-color: #000000;
+  background-image: url("back2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+.content-box img {
+  max-height: 300px;
+}
+
+a {
+  color: #4c8cba;
+  text-decoration: none;
+  transition:
+    color 0.2s,
+    background-color 0.2s;
+}
+
+a:hover {
+  color: #4c8cba;
+}
+
+p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+h1,
+h2,
+h4,
+h5 {
+  color: #222;
+  font-weight: 400;
+  margin: 0 0 15px 0;
+}
+
+h3 {
+  color: #222;
+  font-weight: 600;
+  margin: 30px 0 0 0;
+}
+
+/* --- Layout Containers --- */
+.uk-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0;
+}
+
+.uk-flex {
+  display: flex;
+}
+
+.uk-flex-center {
+  justify-content: center;
+}
+
+/* --- Buttons --- */
+.uk-button-primary {
+  background-color: #51ad43;
+  color: #ffffff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.uk-button-primary:hover {
+  background-color: #4c8cba;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* --- Header & Marquee --- */
+.tm-block-header {
+  background: none;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo_turquoise {
+  background-color: #4c8cba;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.marquee-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.marquee-style {
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+  width: 95%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Header Logo Section (Fixing Mobile Height & Overflow) */
+.header-logo-area {
+  text-align: center;
+  padding: 0;
+  background-color: #4c8cba;
+  margin: 10px auto 0 auto;
+}
+
+.header-banner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0; /* Removes any text gap under the image */
+}
+
+.header-logo-image {
+  width: 100%;
+  height: auto; /* Ensures perfect aspect ratio scaling */
+  display: block;
+}
+
+/* --- Navbar & Hamburger Navigation --- */
+.tm-navbar-wrapper {
+  background-color: #999999;
+  position: sticky;
+  top: 0;
+  z-index: 1001; /* High index to stay above drawer */
+  width: 100%;
+}
+
+.uk-navbar {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  min-height: 55px; /* Ensures background matches the toggle button height */
+  width: 100%;
+  position: relative;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 15px 20px 15px auto;
+  z-index: 1002; /* Must be clickable over everything */
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.uk-navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family:
+    "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14.5px;
+  font-weight: 100;
+}
+
+.uk-navbar-nav > li {
+  position: relative;
+}
+
+.uk-navbar-nav > li > a {
+  display: block;
+  padding: 18px 22px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.uk-navbar-nav > li:hover > a,
+.uk-navbar-nav > li.uk-active > a {
+  background-color: #4c8cba;
+  color: #ffffff;
+}
+
+/* Dropdowns Desktop Setup */
+.uk-dropdown-navbar {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #999999;
+  min-width: 260px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.uk-navbar-nav > li:hover .uk-dropdown-navbar {
+  display: block;
+}
+
+.uk-nav-navbar {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.uk-nav-navbar > li > a {
+  display: block;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: left;
+  transition: all 0.2s ease-in-out;
+}
+
+.uk-nav-navbar > li > a:hover {
+  background-color: #777777;
+  padding-left: 25px;
+}
+
+/* --- Slideshow / Hero Image --- */
+.tm-slideshow-avanti {
+  position: relative;
+  min-height: auto;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  /* Follows width of uk-container strictly */
+  width: 100%;
+}
+
+.uk-overlay-panel {
+  background: rgba(76, 140, 186, 0.6);
+  padding: 30px;
+  color: #fff;
+  width: 100%;
+}
+
+.uk-overlay-panel h3 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.uk-overlay-panel p {
+  color: #eee;
+  font-size: 16px;
+}
+
+.menu-icon {
+  margin-right: 8px;
+}
+
+/* --- Content Blocks --- */
+.page-view {
+  display: none;
+  padding: 0;
+  animation: fadeEffect 0.5s ease-out;
+}
+
+.page-view.active {
+  display: block;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-box {
+  background: #fff;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eaeaea;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.img-link {
+  display: block;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.text-align-center {
+  text-align: center;
+  color: #4c8cba;
+  font-weight: bold;
+}
+
+/* --- Responsive Table Optimization --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+}
+
+table td,
+table th {
+  padding: 12px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table strong {
+  color: #1f2d3d;
+}
+
+ul.table-list {
+  margin: 0;
+  padding-left: 15px;
+}
+
+ul.table-list li {
+  margin-bottom: 5px;
+}
+
+/* --- Bottom Block A (Green Track Module) --- */
+.tm-block-bottom-a {
+  background-color: #51ad43;
+  color: #ffffff;
+  padding: 50px 0;
+  margin-top: 30px;
+}
+
+.tm-block-bottom-a h1 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tm-block-bottom-a table td {
+  border: none;
+  padding: 15px;
+  color: #fff;
+}
+
+.tm-block-bottom-a table tr:nth-child(even) {
+  background-color: transparent;
+}
+
+.tm-block-bottom-a table strong {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Track table initial structures */
+.responsive-table.tracks-table td {
+  width: 33.33%;
+}
+
+/* --- Footer & Sponsors --- */
+.tm-block-footer {
+  background-color: #1f2d3d;
+  color: #8892a0;
+  padding: 40px 0 20px 0;
+  text-align: center;
+}
+
+.tm-block-footer strong {
+  color: #ffffff;
+}
+
+.sponsor-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  background: #fff;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.sponsor-images h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.sponsor-images img {
+  max-height: 100px;
+  max-width: 100%;
+  background: #fff;
+  padding: 5px;
+  object-fit: contain;
+}
+
+/* --- Global Helpers --- */
+.mt-10 {
+  margin-top: 10px;
+}
+.bg-f1 {
+  background: #f1f1f1;
+}
+.text-16 {
+  font-size: 16px;
+}
+.text-blue {
+  color: #4c8cba;
+}
+.font-w-300 {
+  font-weight: 300;
+}
+
+/* ========================================================================
+   Responsive Media Queries (Screen Adaptation)
+   ======================================================================== */
+
+@media (max-width: 900px) {
+  /* Dynamic Grid Changes for Structural Tables */
+  .responsive-table,
+  .responsive-table thead,
+  .responsive-table tbody,
+  .responsive-table th,
+  .responsive-table td,
+  .responsive-table tr {
+    display: block;
+    width: 100% !important;
+  }
+
+  .responsive-table tr {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .responsive-table td {
+    border: none;
+    position: relative;
+    padding-left: 15px;
+  }
+
+  /* Keep the desktop table headers hidden on mobile */
+  .track-headers {
+    display: none !important;
+  }
+
+  /* 1. Base styling to make the mobile track titles look like beautiful header blocks */
+  .responsive-table.tracks-table tr:nth-child(2) td::before {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #51ad43; /* Green text to match your theme */
+    background-color: #ffffff; /* Solid white background */
+    padding: 12px 15px;
+    /* Negative margin pulls the white box to the very edges of the table cell */
+    margin: -20px -15px 20px -15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft drop shadow */
+  }
+
+  /* 2. The actual text content for each track */
+  .responsive-table.tracks-table tr:nth-child(2) td:nth-child(1)::before {
+    content: "Track 1: Artificial Intelligence";
+  }
+
+  .responsive-table.tracks-table tr:nth-child(2) td:nth-child(2)::before {
+    content: "Track 2: Data Science & Engineering";
+  }
+
+  .responsive-table.tracks-table tr:nth-child(2) td:nth-child(3)::before {
+    content: "Track 3: Networks & Distributed Systems";
+  }
+
+  .responsive-table.tracks-table td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px 15px;
+  }
+
+  /* Hamburger transform animation to 'X' when active */
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-toggle.is-active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.is-active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* Animated Mobile Drawer setup */
+  .nav-container {
+    position: fixed;
+    top: 55px; /* Starts directly below navbar height */
+    left: -100%; /* Drawer hidden to the left initially */
+    width: 280px;
+    height: calc(100vh - 55px);
+    background-color: #555555;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    transition: left 0.35s ease-in-out;
+    z-index: 1000;
+    display: block;
+    overflow-y: auto;
+  }
+
+  .nav-container.is-open {
+    left: 0; /* Slides in Drawer completely */
+  }
+
+  .uk-navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .uk-navbar-nav > li {
+    width: 100%;
+    border-bottom: 1px solid #444;
+  }
+
+  .uk-navbar-nav > li > a {
+    padding: 15px 20px;
+    text-align: left;
+  }
+
+  /* Dropdown setups on Mobile Viewports */
+  .uk-dropdown-navbar {
+    position: static;
+    display: none;
+    width: 100%;
+    box-shadow: none;
+    background-color: #444;
+    padding: 0;
+  }
+
+  .uk-dropdown-navbar.is-visible {
+    display: block;
+  }
+
+  .uk-nav-navbar > li > a {
+    padding: 12px 30px;
+  }
+
+  /* General Element Tuning for Smaller Layouts */
+  .tm-slideshow-avanti {
+    min-height: 250px;
+    margin-top: 0;
+  }
+
+  .uk-overlay-panel {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .uk-overlay-panel h3 {
+    font-size: 22px;
+  }
+
+  .content-box {
+    padding: 15px;
+  }
+}
